@@ -18,9 +18,9 @@ public class Add_element_to_array {
                 arr[i] = arr[i - 1];
             }
             arr[index] = element;
-        }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
         }
     }
 }
