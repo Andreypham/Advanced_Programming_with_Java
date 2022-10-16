@@ -27,6 +27,7 @@ public class SumTheNumbersInColumn {
         System.out.println("Enter " + row + " rows and " + column + " columns: ");
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
+                System.out.printf("Element (%s;%s): ", i, j);
                 matrix[i][j] = input.nextInt();
             }
         }

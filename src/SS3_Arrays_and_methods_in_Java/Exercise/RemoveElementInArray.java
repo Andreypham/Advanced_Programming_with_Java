@@ -5,11 +5,18 @@ import java.util.Scanner;
 public class RemoveElementInArray {
     public static void main(String[] args) {
         int[] arr = {4, 12, 7, 8, 1, 8, 6, 9};
+        // print arr
+        System.out.print("Array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf("%4d", arr[i]);
+        }
+        System.out.println();
+        // input number to delete
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number you want to delete: ");
+        System.out.print("Enter the number you want to delete: ");
         int number = sc.nextInt();
-        int delIndex = -1;
-        int count = 0;
+
+        int delIndex = -1, count = 0;
 
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == number) count++;
@@ -17,6 +24,7 @@ public class RemoveElementInArray {
         if (count == 0) {
             System.out.println("The number you want to remove is not in the array");
         } else {
+            System.out.print("Array:");
             for (int j = 0; j < count; j++) {
                 for (int i = 0; i < arr.length; i++) {
                     if (arr[i] == number) delIndex = i;
@@ -25,10 +33,9 @@ public class RemoveElementInArray {
                     arr[i] = arr[i + 1];
                 }
                 arr[arr.length - 1] = 0;
-                for (int i = 0; i < arr.length; i++) {
-                    System.out.print(arr[i] + " ");
-                }
-                System.out.println();
+            }
+            for (int i = 0; i < arr.length; i++) {
+                System.out.printf("%4d", arr[i]);
             }
         }
     }

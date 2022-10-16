@@ -18,6 +18,7 @@ public class SumNumbersDiagonalSquareMatrix {
         System.out.format("Enter %s rows and %s columns:%n", size, size);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
+                System.out.printf("Element (%s;%s): ", i, j);
                 matrix[i][j] = input.nextInt();
             }
         }

@@ -19,6 +19,7 @@ public class FindMaxIn2DArray {
         System.out.println("Enter " + row + " rows and " + column + " columns: ");
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
+                System.out.printf("Element (%s;%s): ", i, j);
                 matrix[i][j] = input.nextInt();
             }
         }
@@ -39,7 +40,7 @@ public class FindMaxIn2DArray {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (matrix[i][j] == max) {
-                    System.out.println(i + "," + j);
+                    System.out.format("(%s;%s)%n", i, j);
                 }
             }
         }
