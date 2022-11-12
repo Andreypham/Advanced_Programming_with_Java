@@ -37,4 +37,9 @@ public class Product {
     public void setCostProduct(int costProduct) {
         this.costProduct = costProduct;
     }
+
+    public void displayProduct(){
+        System.out.printf("Id: %4d   | Name Product: %10s   | Cost Product: %10d",idProduct,nameProduct,costProduct);
+        System.out.println();
+    }
 }
