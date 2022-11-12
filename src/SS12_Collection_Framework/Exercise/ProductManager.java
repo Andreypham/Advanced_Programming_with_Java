@@ -1,9 +1,6 @@
 package SS12_Collection_Framework.Exercise;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.SortedMap;
+import java.util.*;
 
 public class ProductManager {
     public static void main(String[] args) {
@@ -12,11 +9,14 @@ public class ProductManager {
         products.add(new Product(1,"Eraser",20));
         products.add(new Product(2,"Book", 30));
         products.add(new Product(3,"Pencil", 25));
+        products.add(new Product(4,"Book", 40));
         productManager.display(products);
 //        productManager.add(products);
 //        productManager.edit(products);
 //        productManager.remove(products);
         productManager.find(products);
+//        productManager.sortAscending(products);
+//        productManager.sortDescending(products);
     }
 
     public void add (List<Product> products){
@@ -73,6 +73,7 @@ public class ProductManager {
                 products.remove(i);
                 System.out.println("----- List products after remove product ------");
                 display(products);
+                break;
             }
         }
 
@@ -87,16 +88,35 @@ public class ProductManager {
         System.out.println("Enter the product name you want to find: ");
         String temp = sc.nextLine();
         boolean check = false;
+        boolean printed = true;
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getNameProduct().equals(temp)){
                 check = true;
-                System.out.println("The product you are looking for is:");
+                if (printed){
+                    System.out.println("The product you are looking for is:"); //print this line 1 time
+                    printed = false;
+                }
                 products.get(i).displayProduct();
             }
         }
         if (!check) {
             System.out.println("Product not found");
         }
+    }
+
+    public void sortAscending(List<Product> products){
+        System.out.println("----- Sort product by cost ascending -----");
+        // use comparable: execute in class Product
+        Collections.sort(products);
+        display(products);
+    }
+
+    public void sortDescending(List<Product> products){
+        System.out.println("----- Sort product by cost descending -----");
+        // use comparator: create new class CostComparator -> new object
+        CostComparator costComparator = new CostComparator();
+        Collections.sort(products,costComparator);
+        display(products);
     }
 
     public void display(List<Product> products){

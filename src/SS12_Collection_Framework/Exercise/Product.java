@@ -1,6 +1,6 @@
 package SS12_Collection_Framework.Exercise;
 
-public class Product {
+public class Product implements Comparable<Product> {
     private int idProduct;
     private String nameProduct;
     private int costProduct;
@@ -41,5 +41,12 @@ public class Product {
     public void displayProduct(){
         System.out.printf("Id: %4d   | Name Product: %10s   | Cost Product: %10d",idProduct,nameProduct,costProduct);
         System.out.println();
+    }
+
+    @Override
+    public int compareTo(Product o) {
+        if (getCostProduct() > o.getCostProduct()) return 1;
+        else if (getCostProduct() < o.getCostProduct()) return -1;
+        else return 1;
     }
 }
