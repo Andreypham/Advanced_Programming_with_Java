@@ -28,7 +28,8 @@ public class Table_Resistance_Temperature_subrange_W4 {
     public static void main(String[] args) {
 //        double R_TPW = 100.0138, a = -0.00063650335, b = -0.000038911873;//5615
 //        double R_TPW = 99.24807, a = -0.0003711520, b = -0.00001985546;//5626
-        double R_TPW = 25.60193, a = -0.00006863061, b = -0.000004475576;//5628
+//        double R_TPW = 25.60193, a = -0.00006863061, b = -0.000004475576;//5628
+        double R_TPW = 25.60193, a = -0.00004102187237441995, b = 0.000011678226547817938;//5628
         double Wr_90, dW_T90, W_T90, R_T90, K = 273.15;
         double T_90;
 

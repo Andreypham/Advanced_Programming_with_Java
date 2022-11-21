@@ -29,7 +29,7 @@ public class Table_Resistance_Temperature_subrange_W6 {
 
         System.out.println("================================== Table Resistance and Temperature ==================================");
 
-        for (int i = 0; i <= 962; i++) {
+        for (int i = 0; i <= 962; i += 10) {
             T_90 = i + K;
             Wr_90 = Wr_T90(T_90);
             if (T_90 < 933) {

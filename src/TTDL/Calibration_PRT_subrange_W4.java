@@ -26,8 +26,10 @@ public class Calibration_PRT_subrange_W4 {
     }
 
     public static void main(String[] args) {
-       double R_TPW = 100.0243, T1 = -195.941, T2 = -37.824, R1 = 18.8090, R2 = 84.8596, K = 273.15;
+//       double R_TPW = 100.0243, T1 = -195.941, T2 = -37.824, R1 = 18.8090, R2 = 84.8596, K = 273.15;
 //        double R_TPW = 100, T1 = -200, T2 = -10, R1 = 18.52, R2 = 96.09, K = 273.15;
+//        double R_TPW = 99.24807, T1 = -197, T2 = -80, R1 = 18.15842, R2 = 67.18161, K = 273.15;
+        double R_TPW = 25.60193, T1 = -197, T2 = -38.834, R1 = 4.67834, R2 = 21.61188, K = 273.15;
         double[] T_90 = {T1 + K, T2 + K};
         double[] R_T90 = {R1, R2};
         double[] W_T90 = {R_T90[0] / R_TPW, R_T90[1] / R_TPW};

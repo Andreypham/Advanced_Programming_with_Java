@@ -116,7 +116,7 @@ public class ProductManager {
         // use comparator: create new class CostComparator -> new object
         CostComparator costComparator = new CostComparator();
         products.sort(costComparator);
-        // Collections.reverse(products); // use comparable: reverse <> sort
+        // Collections.reverse(products); // use comparable: reverse >< sort
         display(products);
     }
 
