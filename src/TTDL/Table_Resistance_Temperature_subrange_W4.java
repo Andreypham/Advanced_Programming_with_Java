@@ -26,22 +26,29 @@ public class Table_Resistance_Temperature_subrange_W4 {
     }
 
     public static void main(String[] args) {
-//        double R_TPW = 100.0138, a = -0.00063650335, b = -0.000038911873;//5615
+        double R_TPW = 100.0138, a = -0.00063650335, b = -0.000038911873;//5615
 //        double R_TPW = 99.24807, a = -0.0003711520, b = -0.00001985546;//5626
 //        double R_TPW = 25.60193, a = -0.00006863061, b = -0.000004475576;//5628
-        double R_TPW = 25.60193, a = -0.00004102187237441995, b = 0.000011678226547817938;//5628
+//        double R_TPW = 25.60193, a = -0.00004102187237441995, b = 0.000011678226547817938;//5628
         double Wr_90, dW_T90, W_T90, R_T90, K = 273.15;
         double T_90;
 
         System.out.println("================================== Table Resistance and Temperature ==================================");
 
-        for (int i = -200; i <= 0; i++) {
-            T_90 = i+ K;
-            Wr_90 = Math.pow(Math.E, ln_Wr_T90(T_90));
-            dW_T90 = (a * (Wr_90 - 1) + b * (Wr_90 - 1) * Math.log(Wr_90)) * (1 + a + b * (1 - 1 / Wr_90 + Math.log(Wr_90)));
-            W_T90 = dW_T90 + Wr_90;
-            R_T90 = W_T90 * R_TPW;
-            System.out.format("%4d %10.6f%n",i, R_T90);
-        }
+//        for (int i = -200; i <= 0; i++) {
+//            T_90 = i+ K;
+//            Wr_90 = Math.pow(Math.E, ln_Wr_T90(T_90));
+//            dW_T90 = (a * (Wr_90 - 1) + b * (Wr_90 - 1) * Math.log(Wr_90)) * (1 + a + b * (1 - 1 / Wr_90 + Math.log(Wr_90)));
+//            W_T90 = dW_T90 + Wr_90;
+//            R_T90 = W_T90 * R_TPW;
+//            System.out.format("%4d %10.6f%n",i, R_T90);
+//        }
+
+        T_90 = 0 - 0.012 + K;
+        Wr_90 = Math.pow(Math.E, ln_Wr_T90(T_90));
+        dW_T90 = (a * (Wr_90 - 1) + b * (Wr_90 - 1) * Math.log(Wr_90)) * (1 + a + b * (1 - 1 / Wr_90 + Math.log(Wr_90)));
+        W_T90 = dW_T90 + Wr_90;
+        R_T90 = W_T90 * R_TPW;
+        System.out.format("%10.6f%n", R_T90);
     }
 }

@@ -29,13 +29,20 @@ public class Table_Resistance_Temperature_subrange_W8 {
 
         System.out.println("================================== Table Resistance and Temperature ==================================");
 
-        for (int i = 0; i <= 420; i++) {
-            T_90 = i+ K;
-            Wr_90 = Wr_T90(T_90);
-            dW_T90 = (a * (Wr_90 - 1) + b * Math.pow((Wr_90 - 1),2)) * (1 + a + 2*b * (Wr_90-1));
-            W_T90 = dW_T90 + Wr_90;
-            R_T90 = W_T90 * R_TPW;
-            System.out.format("%4d:  %10.4f%n",i, R_T90);
-        }
+//        for (int i = 0; i <= 420; i++) {
+//            T_90 = i+ K;
+//            Wr_90 = Wr_T90(T_90);
+//            dW_T90 = (a * (Wr_90 - 1) + b * Math.pow((Wr_90 - 1),2)) * (1 + a + 2*b * (Wr_90-1));
+//            W_T90 = dW_T90 + Wr_90;
+//            R_T90 = W_T90 * R_TPW;
+//            System.out.format("%4d:  %10.4f%n",i, R_T90);
+//        }
+
+        T_90 = 420 - 0.035+ K;
+        Wr_90 = Wr_T90(T_90);
+        dW_T90 = (a * (Wr_90 - 1) + b * Math.pow((Wr_90 - 1),2)) * (1 + a + 2*b * (Wr_90-1));
+        W_T90 = dW_T90 + Wr_90;
+        R_T90 = W_T90 * R_TPW;
+        System.out.format(" %10.6f%n", R_T90);
     }
 }
