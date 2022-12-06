@@ -18,10 +18,11 @@ public class StudentReadAndWriteFileCSV {
         while ((line = buff.readLine()) != null) {
             temp = line.split(",");
             String name = temp[0];
-            int age = Integer.parseInt(temp[1]);
-            String gender = temp[2];
-            double score = Double.parseDouble(temp[3]);
-            student = new Student(name, age, gender, score);
+            String birthday = temp[1];
+            int age = Integer.parseInt(temp[2]);
+            String gender = temp[3];
+            double score = Double.parseDouble(temp[4]);
+            student = new Student(name, birthday, age, gender, score);
             studentList.add(student);
         }
         buff.close();

@@ -2,15 +2,17 @@ package Demo1.model;
 
 public abstract class Person {
     private String name;
-    private int age;
+    private String birthday;
+    private int weight;
     private String gender;
 
     public Person() {
     }
 
-    public Person(String name, int age, String gender) {
+    public Person(String name, String birthday, int weight, String gender) {
         this.name = name;
-        this.age = age;
+        this.birthday = birthday;
+        this.weight = weight;
         this.gender = gender;
     }
 
@@ -22,12 +24,20 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int age) {
+        this.weight = weight;
     }
 
     public String getGender() {
@@ -44,7 +54,8 @@ public abstract class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
+                ", birthday='" + birthday + '\'' +
+                ", age=" + weight +
                 ", gender='" + gender + '\'' +
                 '}';
     }

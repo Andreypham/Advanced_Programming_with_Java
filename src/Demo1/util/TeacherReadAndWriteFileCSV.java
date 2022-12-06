@@ -17,10 +17,11 @@ public class TeacherReadAndWriteFileCSV {
         while ((line = buff.readLine()) != null) {
             temp = line.split(",");
             String name = temp[0];
-            int age = Integer.parseInt(temp[1]);
-            String gender = temp[2];
-            double salary = Double.parseDouble(temp[3]);
-            teacher = new Teacher(name, age, gender, salary);
+            String birthday = temp[1];
+            int age = Integer.parseInt(temp[2]);
+            String gender = temp[3];
+            double salary = Double.parseDouble(temp[4]);
+            teacher = new Teacher(name, birthday, age, gender, salary);
             teachers.add(teacher);
         }
         buff.close();

@@ -53,11 +53,12 @@ public class TeacherService implements ITeacherService {
             if (name.equals(teachers.get(i).getName())) {
                 teachers.set(i, ValidationTeacher.infoTeacher());
                 found = true;
-                System.out.println("Update teacher successful");
             }
         }
         if (!found) {
             System.out.println("Don't found teacher: " + name);
+        }else {
+            System.out.println("Update teacher successful");
         }
         // Step 3: write collection with new data to file CSV
         TeacherReadAndWriteFileCSV.writeFileCSV(FILE_PATH, teachers);

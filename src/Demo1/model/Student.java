@@ -1,6 +1,6 @@
 package Demo1.model;
 
-public class Student extends Person{
+public class Student extends Person {
     private double score;
 
     public Student() {
@@ -10,8 +10,8 @@ public class Student extends Person{
         this.score = score;
     }
 
-    public Student(String name, int age, String gender, double score) {
-        super(name, age, gender);
+    public Student(String name, String birthday, int age, String gender, double score) {
+        super(name, birthday, age, gender);
         this.score = score;
     }
 
@@ -25,13 +25,11 @@ public class Student extends Person{
 
     @Override
     public String getInfo() {
-        return String.format("%20s   |%10s   |%10s   |%10s",getName(),getAge(),getGender(),getScore());
+        return String.format("%20s   |%15s     |%10s   |%10s   |%10s", getName(), getBirthday(), getWeight(), getGender(), getScore());
     }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "score=" + score +
-                '}';
+        return String.format("%s,%s,%s,%s,%s", getName(), getBirthday(), getWeight(), getGender(), getScore());
     }
 }

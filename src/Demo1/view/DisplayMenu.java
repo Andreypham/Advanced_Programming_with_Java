@@ -28,7 +28,8 @@ public class DisplayMenu {
         System.out.println("1. Display list student");
         System.out.println("2. Add New Student");
         System.out.println("3. Update student");
-        System.out.println("4. Return main menu");
+        System.out.println("4. Sort List student");
+        System.out.println("5. Return main menu");
         System.out.println("----------------------------");
         System.out.println("Enter your choice: ");
     }

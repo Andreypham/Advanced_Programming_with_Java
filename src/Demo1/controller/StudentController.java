@@ -22,14 +22,15 @@ public class StudentController {
                     case 2:
                         studentService.addNew(); break;
                     case 3:
-                        System.out.println("3. Update Teacher");break;
-                    case 4: break;
+                        System.out.println("Update student");;break;
+                    case 4: studentService.sortByName(); break;
+                    case 5: break;
                     default:
                         System.out.println("Invalid choice, please try again");
                 }
             }catch (NumberFormatException | IOException e){
                 System.err.println("Invalid input, please enter again!");
             }
-        }while (choice != 4);
+        }while (choice != 5);
     }
 }
