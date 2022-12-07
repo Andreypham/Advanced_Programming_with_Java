@@ -57,7 +57,7 @@ public class TeacherService implements ITeacherService {
         }
         if (!found) {
             System.out.println("Don't found teacher: " + name);
-        }else {
+        } else {
             System.out.println("Update teacher successful");
         }
         // Step 3: write collection with new data to file CSV
@@ -77,27 +77,30 @@ public class TeacherService implements ITeacherService {
         for (int i = 0; i < teachers.size(); i++) {
             if (name.equals(teachers.get(i).getName())) {
                 found = true;
-                do{
-                    try{
+                do {
+                    try {
                         System.out.println("Are you sure?");
                         System.out.println("1. Yes");
                         System.out.println("2. No");
                         choice = Integer.parseInt(scanner.nextLine());
                         check = true;
-                        switch (choice){
-                            case 1: teachers.remove(i);
-                                System.out.println("Delete teacher successful");break;
-                            case 2: break;
+                        switch (choice) {
+                            case 1:
+                                teachers.remove(i);
+                                System.out.println("Delete teacher successful");
+                                break;
+                            case 2:
+                                break;
                             default:
                                 System.out.println("Invalid choice, please try again");
                         }
-                    }catch (NumberFormatException e){
+                    } catch (NumberFormatException e) {
                         System.err.println("Invalid input, please enter again!");
                     }
-                }while (!check);
+                } while (!check);
             }
         }
-        if (!found){
+        if (!found) {
             System.out.println("Teacher not found");
         }
 
@@ -112,7 +115,7 @@ public class TeacherService implements ITeacherService {
         // Step 2: Sort
         Collections.sort(teachers);
         // Step 3: display List teacher
-        for(Teacher teacher:teachers){
+        for (Teacher teacher : teachers) {
             System.out.println(teacher.getInfo());
         }
     }
@@ -121,19 +124,20 @@ public class TeacherService implements ITeacherService {
     public void search() throws IOException {
         // Step 1: read file CSV to collection
         List<Teacher> teachers = TeacherReadAndWriteFileCSV.readFieCSV(FILE_PATH);
-        // Step 2: Search data
+        // Step 2: Search data/ use regex .*name.* or use method contains
         System.out.println("Enter teacher's name you want to search:");
         String name = scanner.nextLine();
+//        String regex = ".*" + name + ".*";
         boolean flagSearch = false;
         for (Teacher teacher : teachers) {
-            if (name.equals(teacher.getName())) {
+            if (teacher.getName().contains(name)) {
                 System.out.println(teacher.getInfo());
                 flagSearch = true;
             }
         }
         if (!flagSearch) {
             System.out.println("Don't found teacher: " + name);
-        }else{
+        } else {
             System.out.println("Update teacher successful");
         }
     }
